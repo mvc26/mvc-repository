@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SORPRENDI PEPI</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        header {
+            background-color: white;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+            font-family: Calibri, sans-serif; /* Cambia il font del testo */
+        }
+        h2 {
+            font-size: 10px;
+            margin: 0;
+            color: blue;
+            font-family: Calibri, sans-serif; /* Cambia il font del testo */
+        }
+        h3 {
+            font-size: 15px;
+            margin: 0;
+            text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+            font-family: Calibri, sans-serif; /* Cambia il font del testo */
+        }
+        #countdown {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: Calibri, sans-serif;
+            color: white;
+            background-color: red;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        #countdownImage {
+            display: none; /* Inizialmente, nascondi l'immagine */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SORPRENDI PEPI</h1>
+    </header>
+    <main>
+        <p>Ciao Pepi</p>
+        <div></div>
+        <p> Ho creato questo sito per aggiungere hype e ancora piu pepe</p>
+        <div></div>
+        <p> Ho creato un sito per farti una sorpresa se non è amore non so piu cosa sia okkkkk</p>
+        <div></div> 
+        <p> Spero ti piaccia</p>
+        <div></div>
+
+        <div id="countdown"></div>
+        <div style="height: 25px;"></div> 
+        <div id="countdownImage">
+            <button><a href="https://maps.app.goo.gl/iX7Ei4k6QBYSJdQcA" target="_blank">
+                <img src="immagine.jpg" alt="Immagine sorprendente">
+            </a> CLICCAMI</button>
+        </div>
+
+        <div style="height: 25px;"></div>
+
+        <h3> A FINE CONTDOWN SEGUI LE INDICAZIONI </h3>
+        <h2>morepassionmoreenergy</h2>
+    </main>
+
+    <footer>
+        <p>&copy; 2023mvc</p>
+    </footer>
+
+    <script>
+        var countdownDate = new Date("October 21, 2023 07:00:00").getTime();
+
+        // Aggiorna il countdown ogni secondo
+        var countdown = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countdownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            // Quando il countdown scade, mostra un messaggio
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "Il countdown è scaduto!";
+                document.getElementById("countdownImage").style.display = "block";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
